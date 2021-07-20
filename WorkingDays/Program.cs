@@ -8,18 +8,44 @@ namespace WorkingDays
     {
         static void Main(string[] args)
         {
-            // var insert = DateTime.ParseExact("20210101", "yyyyMMdd", 
-            //     CultureInfo.InvariantCulture);
-            //
-            // Console.WriteLine(insert);
-            // var holidayChecker = new HolidayChecker();
-            // holidayChecker.CheckHoliday(new DateTime(2021,1,1),"act");
-            var csvParser = new CsvParser();
-            
-            Console.WriteLine(csvParser.ParseHolidaysCsv()[22].Information);
             var dayChecker = new DayChecker();
+            var dateInput = GetDecimalFromConsole("Please enter a 2021 date in mm/dd/yyyy format:  ");
+            var stateInput = GetStringFromConsole("Please enter a state in abbreviated form:  ");
 
-            dayChecker.CheckWorkingDay(new DateTime(2021,10,4), "nsw");
+            dayChecker.CheckWorkingDay(dateInput, stateInput);
+        }
+        
+        static DateTime GetDecimalFromConsole(string input)
+        {
+            var success = false;
+            var result = new DateTime();
+            while (!success)
+            {
+                Console.Write(input);
+                var temp = Console.ReadLine();
+                success = DateTime.TryParse(temp, out result);
+            }
+            return result;
+        }
+        
+        private static string GetStringFromConsole(string input)
+        {
+            var success = false;
+            var result = string.Empty;
+
+            while (!success)
+            {
+                Console.Write(input);
+                result = Console.ReadLine();
+                success = result is "nsw" or "vic" or "qld" or "sa" or "wa" or "tas" or "nt" or "act";
+                
+                if (!success)
+                {
+                    Console.WriteLine("Please enter valid state");
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace WorkingDays
                     
                     holiday.Date = DateTime.ParseExact(date[i], "yyyyMMdd", CultureInfo.InvariantCulture);
                     holiday.Name = name[i];
-                    holiday.Information = information[i];
+                    holiday.Information = information[i].Replace("\"","");
                     holiday.Jurisdiction = jurisdiction[i];
                     holiday.IsWeekEnd = isWeekEnd[i];
                     

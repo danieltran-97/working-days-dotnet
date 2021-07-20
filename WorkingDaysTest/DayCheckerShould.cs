@@ -8,7 +8,7 @@ namespace WorkingDaysTest
     {
 
         [Fact]
-        public void Test_day_is_a_working_day()
+        public void CheckWorkingDay_returns_true_when_working_day()
         {
             var dayChecker = new DayChecker();
 
@@ -17,7 +17,7 @@ namespace WorkingDaysTest
             Assert.True(actual);
         }
         [Fact]
-        public void Test_day_is_the_weekend()
+        public void CheckWorkingDay_returns_false_when_weekend_day()
         {
             var dayChecker = new DayChecker();
 
@@ -27,11 +27,31 @@ namespace WorkingDaysTest
         }
         
         [Fact]
-        public void Test_day_is_a_public_holiday()
+        public void CheckWorkingDay_returns_false_when_public_holiday()
         {
             var dayChecker = new DayChecker();
 
             var actual = dayChecker.CheckWorkingDay(new DateTime(2021,1,1),"act");
+            
+            Assert.False(actual);
+        }
+        
+        [Fact]
+        public void IsWeekend_returns_true_when_weekend_day()
+        {
+            var dayChecker = new DayChecker();
+
+            var actual = dayChecker.IsWeekend(new DateTime(2021,7,25));
+            
+            Assert.True(actual);
+        }
+        
+        [Fact]
+        public void IsWeekend_returns_false_when_working_day()
+        {
+            var dayChecker = new DayChecker();
+
+            var actual = dayChecker.IsWeekend(new DateTime(2021,7,20));
             
             Assert.False(actual);
         }
