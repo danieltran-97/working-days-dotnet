@@ -11,7 +11,7 @@ namespace WorkingDays
         public List<Holiday> ParseHolidaysCsv()
         {
             var holidays = new List<Holiday>();
-            var csvFile = "/Users/danieltran/C# Projects/Daniel-Tran-technicaltest-solution/australian_public_holidays_2021.csv";
+            var csvFile = "/Users/danieltran/C# Projects/working-days-dotnet/WorkingDays/csv/australian_public_holidays_2021.csv";
             var reader = new StreamReader(csvFile);
             
             using (reader)

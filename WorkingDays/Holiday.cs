@@ -16,16 +16,12 @@ namespace WorkingDays
             {
                 case "Before":
                     return "falls before the weekend";
-                    break;
                 case "After":
                     return "falls after the weekend";
-                    break;
                 case "None":
                     return "falls on the weekend";
-                    break;
                 default:
                     return "";
-                    break;
             }
         }
         
