@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingDays", "WorkingDays\WorkingDays.csproj", "{0BF7E159-369A-440F-A2FA-F7314D79B72D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingDaysTest", "WorkingDaysTest\WorkingDaysTest.csproj", "{FD35A200-2A32-480A-B3F7-38B6E72213D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BF7E159-369A-440F-A2FA-F7314D79B72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BF7E159-369A-440F-A2FA-F7314D79B72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BF7E159-369A-440F-A2FA-F7314D79B72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BF7E159-369A-440F-A2FA-F7314D79B72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD35A200-2A32-480A-B3F7-38B6E72213D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD35A200-2A32-480A-B3F7-38B6E72213D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD35A200-2A32-480A-B3F7-38B6E72213D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD35A200-2A32-480A-B3F7-38B6E72213D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

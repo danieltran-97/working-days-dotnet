@@ -1,0 +1,10 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a6fe0af6_002D5413_002D49b8_002D9f2c_002D0ee18a49f09a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CsvParserShould" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::FD35A200-2A32-480A-B3F7-38B6E72213D8::net5.0::WorkingDaysTest.CsvParserShould&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::FD35A200-2A32-480A-B3F7-38B6E72213D8::net5.0::WorkingDaysTest.DayCheckerShould.IsWeekend_returns_true_when_weekend_day&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::FD35A200-2A32-480A-B3F7-38B6E72213D8::net5.0::WorkingDaysTest.DayCheckerShould.IsWeekend_returns_false_when_working_day&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::FD35A200-2A32-480A-B3F7-38B6E72213D8::net5.0::WorkingDaysTest.DayCheckerShould&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::FD35A200-2A32-480A-B3F7-38B6E72213D8::net5.0::WorkingDaysTest.HolidayShould&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
