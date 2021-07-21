@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace WorkingDays
 {
-    public class CsvParser
+    public static class CsvParser
     {
         private const string File = "australian_public_holidays_2021.csv";
         

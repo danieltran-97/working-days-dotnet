@@ -8,8 +8,6 @@ namespace WorkingDaysTest
         [Fact]
         public void ParseHolidaysCsv_should_return_a_list_of_91_holidays()
         {
-            var csvParser = new CsvParser();
-        
             var listOfHolidays = CsvParser.ParseHolidaysCsv();
             
             Assert.Equal(91, listOfHolidays.Count);
@@ -18,8 +16,6 @@ namespace WorkingDaysTest
         [Fact]
         public void ParseHolidaysCsv_returns_information_with_commas()
         {
-            var csvParser = new CsvParser();
-            
             var holidayList = CsvParser.ParseHolidaysCsv();
             var actual = holidayList[22].Information;
             var expected =

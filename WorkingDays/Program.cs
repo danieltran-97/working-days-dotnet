@@ -6,11 +6,10 @@ namespace WorkingDays
     {
         static void Main(string[] args)
         {
-            var dayChecker = new DayChecker();
             var dateInput = GetDecimalFromConsole("Please enter a 2021 date in mm/dd/yyyy format:  ");
             var stateInput = GetStringFromConsole("Please enter a state in abbreviated form:  ");
 
-            dayChecker.CheckWorkingDay(dateInput, stateInput);
+            DayChecker.CheckWorkingDay(dateInput, stateInput);
         }
         
         static DateTime GetDecimalFromConsole(string input)

@@ -3,37 +3,41 @@ using System.Linq;
 
 namespace WorkingDays
 {
-    public class DayChecker
+    public static class DayChecker
     {
-        public bool CheckWorkingDay(DateTime date, string state)
+        public static bool CheckWorkingDay(DateTime date, string state)
         {
-            var csvReader = new CsvParser();
             var allHolidays = CsvParser.ParseHolidaysCsv();
             var holiday = allHolidays.Where(h => h.Date == date && h.Jurisdiction == state).Select(h => h).ToList();
             var isHoliday = holiday.Count == 1;
-            var isWorkingDay = !_isWeekend(date) && !isHoliday;
+            var isWorkingDay = !IsWeekend(date) && !isHoliday;
 
             if (isHoliday)
             {
-                Console.WriteLine($"{date:dddd, dd MMMM yyyy}, is {holiday[0].Name} and {holiday[0].PublicHolidayFallsOn()}.");
+                Console.WriteLine($"{PrintFullDate(date)}, is {holiday[0].Name} and {holiday[0].PublicHolidayFallsOn()}.");
             }
             if (isWorkingDay)
             {
-                Console.WriteLine($"{date:dddd, dd MMMM yyyy}, is a working day");
+                Console.WriteLine($"{PrintFullDate(date)}, is a working day");
             }
 
             if (!isHoliday && !isWorkingDay)
             {
-                Console.WriteLine($"{date:dddd, dd MMMM yyyy}, is the weekend");
+                Console.WriteLine($"{PrintFullDate(date)}, is the weekend");
             }
             
             return isWorkingDay;
         }
 
-        private static bool _isWeekend(DateTime day)
+        private static bool IsWeekend(DateTime day)
         {
-            return (day.DayOfWeek == DayOfWeek.Saturday) || (day.DayOfWeek == DayOfWeek.Sunday);
+            return day.DayOfWeek is DayOfWeek.Saturday or DayOfWeek.Sunday;
         }
-        
+
+        private static string PrintFullDate(DateTime day)
+        {
+            return $"{day:dddd, dd MMMM yyyy}";
+        }
+
     }
 }
