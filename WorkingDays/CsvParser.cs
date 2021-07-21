@@ -8,11 +8,13 @@ namespace WorkingDays
 {
     public class CsvParser
     {
-        public List<Holiday> ParseHolidaysCsv()
+        private const string File = "australian_public_holidays_2021.csv";
+        
+        public static List<Holiday> ParseHolidaysCsv()
         {
             var holidays = new List<Holiday>();
-            var csvFile = "/Users/danieltran/C# Projects/working-days-dotnet/WorkingDays/csv/australian_public_holidays_2021.csv";
-            var reader = new StreamReader(csvFile);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), @"csv/", File);
+            var reader = new StreamReader(path);
             
             using (reader)
             {
@@ -25,7 +27,7 @@ namespace WorkingDays
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    var values = Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+                    var values = SplitCommasOutsideQuotes(line);
 
                     date.Add(values[0]);
                     name.Add(values[1]);
@@ -33,21 +35,25 @@ namespace WorkingDays
                     jurisdiction.Add(values[3]);
                     isWeekEnd.Add(values[4]);
                 }
-
+                
                 for (var i = 1; i < date.Count; i++)
                 {
-                    var holiday = new Holiday();
-                    
-                    holiday.Date = DateTime.ParseExact(date[i], "yyyyMMdd", CultureInfo.InvariantCulture);
-                    holiday.Name = name[i];
-                    holiday.Information = information[i].Replace("\"","");
-                    holiday.Jurisdiction = jurisdiction[i];
-                    holiday.IsWeekEnd = isWeekEnd[i];
-                    
-                    holidays.Add(holiday);
+                    holidays.Add(new Holiday
+                    {
+                        Date = DateTime.ParseExact(date[i], "yyyyMMdd", CultureInfo.InvariantCulture),
+                        Name = name[i],
+                        Information = information[i].Replace("\"", ""),
+                        Jurisdiction = jurisdiction[i],
+                        IsWeekEnd = isWeekEnd[i]
+                    });
                 }
             }
             return holidays;
+        }
+
+        private static string[] SplitCommasOutsideQuotes(string line)
+        {
+            return Regex.Split(line, ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
         }
     }
 }
