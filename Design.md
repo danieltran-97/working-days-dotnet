@@ -1,5 +1,5 @@
 # Design
-- Followed Kent Beck's 4 Principles of design
+- Followed Kent Beck's 4 Principles of Simple Design
   - **Passes tests**: methods pass tests
   - **No duplication**: Followed the DRY princle (Don't repeat yourself)
   - **Reveals intention**: Tried to name classes and class members in an easy way for other devs to understand, without the use of comments.
