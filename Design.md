@@ -26,7 +26,7 @@
 
 ## DayChecker.cs
 - I made this class static for the same reason as CsvParser.
-- ```CheckWorkingDay``` returns a boolean determining whether the Date input is a working day, weekend or public holiday.
+- ```CheckWorkingDay()``` returns a boolean determining whether the Date input is a working day, weekend or public holiday.
 - The method accepts parameters ```date``` a DateTime and a string ```state```.
 - I use the ```ParseHolidayCsv()``` method and store it in the variable ```allHolidays```.
 - I created a LINQ query which stores in a list, a holiday if the ```date``` and ```state``` match any holidays from ```allHolidays```.
