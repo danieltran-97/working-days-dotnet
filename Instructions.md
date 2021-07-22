@@ -12,11 +12,11 @@
   - ```dotnet test``` to run unit tests
 
 ## WorkingDays
-1. The console will ask you to enter a date in the format of mm/dd/yyyy.
+1. The console will ask you to enter a date in the format of mm/dd/yyyy. The program will allow you to retry if you enter an invalide date.
 
   ```Please enter a 2021 date in mm/dd/yyyy format:  ```
 
-2. Next the console will ask you to enter in an australian state in abreviated form.
+2. Next the console will ask you to enter in an australian state in abreviated form. The program will allow you to retry if you enter an invalide state.
 
   ```Please enter a state in abbreviated form:  ```
 
