@@ -44,7 +44,7 @@
 - I practiced TDD for this project, and avoided writing the ```Console.Write``` and ```Console.ReadLine``` first as I find it makes me prone to not TDD.
 
 ## HolidayShould.cs
-- I used inline data to reduce repetition and also the size of my code. This tests the ```PublicHolidayFallsOn()``` method and checks whether its outputing the correct string.
+- I used inline data to reduce repetition and also the size of the code. This tests the ```PublicHolidayFallsOn()``` method and checks whether its outputing the correct string.
 ## CsvParserShould.cs
 - The first test checks whether ```ParseHolidaysCsv()``` correctly parses the right amount of Holidays from the csv and excluding the headers by expecting the list to have a count of 91.
 - The 2nd test tests if a field containing commas within quotes is not split. 
