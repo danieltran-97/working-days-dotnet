@@ -17,7 +17,7 @@ namespace WorkingDaysTest
         [Fact]
         public void CheckWorkingDay_returns_false_when_weekend_day()
         {
-            var actual = DayChecker.CheckWorkingDay(new DateTime(2021,7,25),"act");
+            var actual = DayChecker.CheckWorkingDay(new DateTime(2021,7,25),"nsw");
             
             Assert.False(actual);
         }
@@ -25,7 +25,7 @@ namespace WorkingDaysTest
         [Fact]
         public void CheckWorkingDay_returns_false_when_public_holiday()
         {
-            var actual = DayChecker.CheckWorkingDay(new DateTime(2021,1,1),"act");
+            var actual = DayChecker.CheckWorkingDay(new DateTime(2021,1,1),"qld");
             
             Assert.False(actual);
         }

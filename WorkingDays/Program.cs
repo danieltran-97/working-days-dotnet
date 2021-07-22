@@ -11,37 +11,48 @@ namespace WorkingDays
 
             DayChecker.CheckWorkingDay(dateInput, stateInput);
         }
-        
-        static DateTime GetDecimalFromConsole(string input)
+
+        private static DateTime GetDecimalFromConsole(string message)
         {
             var success = false;
             var result = new DateTime();
             while (!success)
             {
-                Console.Write(input);
+                Console.Write(message);
                 var temp = Console.ReadLine();
                 success = DateTime.TryParse(temp, out result);
+                
+                if (!success)
+                {
+                    Console.WriteLine("Please enter valid date");
+                }
             }
             return result;
         }
         
-        private static string GetStringFromConsole(string input)
+        private static string GetStringFromConsole(string message)
         {
             var success = false;
             var result = string.Empty;
 
             while (!success)
             {
-                Console.Write(input);
+                Console.Write(message);
                 result = Console.ReadLine();
-                success = result is "nsw" or "vic" or "qld" or "sa" or "wa" or "tas" or "nt" or "act";
+                success = result is "nsw" 
+                                 or "vic" 
+                                 or "qld" 
+                                 or "sa" 
+                                 or "wa" 
+                                 or "tas" 
+                                 or "nt" 
+                                 or "act";
                 
                 if (!success)
                 {
                     Console.WriteLine("Please enter valid state");
                 }
             }
-
             return result;
         }
     }

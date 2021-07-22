@@ -8,7 +8,9 @@ namespace WorkingDays
         public static bool CheckWorkingDay(DateTime date, string state)
         {
             var allHolidays = CsvParser.ParseHolidaysCsv();
-            var holiday = allHolidays.Where(h => h.Date == date && h.Jurisdiction == state).Select(h => h).ToList();
+            var holiday = allHolidays
+                                    .Where(h => h.Date == date && h.Jurisdiction == state)
+                                    .Select(h => h).ToList();
             var isHoliday = holiday.Count == 1;
             var isWorkingDay = !IsWeekend(date) && !isHoliday;
 

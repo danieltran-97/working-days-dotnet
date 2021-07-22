@@ -14,7 +14,7 @@ namespace WorkingDaysTest
         }
 
         [Fact]
-        public void ParseHolidaysCsv_returns_information_with_commas()
+        public void ParseHolidaysCsv_returns_information_column_with_commas()
         {
             var holidayList = CsvParser.ParseHolidaysCsv();
             var actual = holidayList[22].Information;
