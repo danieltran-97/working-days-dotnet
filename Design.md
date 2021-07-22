@@ -1,7 +1,7 @@
 # Design
 - Followed Kent Beck's 4 Principles of Simple Design
   - **Passes tests**: methods pass tests
-  - **No duplication**: Followed the DRY princle (Don't repeat yourself)
+  - **No duplication**: Followed the DRY principle (Don't repeat yourself)
   - **Reveals intention**: Tried to name classes and class members in an easy way for other devs to understand, without the use of comments.
   - **Fewest elements**: Tried not to use unnecessary methods or class members, tried to keep code of classes between 50-60 lines long. For maintainability purposes.
 
