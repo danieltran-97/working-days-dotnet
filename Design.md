@@ -16,3 +16,19 @@
 - I made 5 List variables that represent the 5 columns in the csv, to store the columns from the csv.
 - I first had trouble splitting up the csv due to some Information column fields containing commas. I then created a method ```SplitCommasOutsideQuotes()``` to only split commas outside of quotes. I did this by using a regex pattern I found on Stackoverflow.
 - In the for loop I made the starting index 1 to ignore the column headers of the csv. The for loop adds the data from the Lists I created which store the columns. This data is stored as a ```Holiday``` object and this object is then stored as a list of holidays ```List<Holiday>```.
+- For the ```Date``` property I converted the string date to a ```DateTime``` so that it could be stored in the object also for the ```Information``` property I decided to remove the quotes of the string if the csv column field it contained commas.
+
+## DayChecker.cs
+- I made this class static for the same reason as CsvParser.
+- ```CheckWorkingDay``` returns a boolean determining whether the Date input is a working day, weekend or public holiday.
+- The method accepts parameters ```date``` a DateTime and a string ```state```.
+- I use the ```ParseHolidayCsv()``` method and store it in the variable ```allHolidays```.
+- I created a LINQ query which stores in a list, a holiday if the ```date``` and ```state``` match any holidays from ```allHolidays```.
+- ```isHoliday``` is a boolean which determines whether the ```date``` and ```state``` is a public holiday. It is only possible for the ```allHolidays``` list to be empty or have a Count of 1. Therefore having a Count of 1 will indicate that its a holiday
+- I also created private method ```IsWeekend()``` for ```CheckWorkingDay``` to use and it determines if a day is Saturday or Sunday.
+- ```isWorkingDay``` uses ```IsWeekend()``` and ```isHoliday``` to determine if the day is a working day.
+- If the day is a public holiday the method will print to console the full date, name of the public holiday and whether it falls before, after or on the weekend.
+- The method will also print a line stating whether the day is a working day or a weekend.
+
+## Program.cs
+- I created 2 methods ```GetDecimalFromConsole()``` and ```GetStringFromConsole()``` for retry logic incase the user enters invalid data.
