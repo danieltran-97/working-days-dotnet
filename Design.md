@@ -41,7 +41,7 @@
 
 # Testing
 - Used the Xunit as my testing tool to write unit tests
-- I practiced TDD for this project, and avoided writing the ```Console.Write``` and ```Console.ReadLine``` first as I find it makes me prone to not TDD.
+- I practiced TDD for this project, and avoided writing the ```Console.Write``` and ```Console.ReadLine``` first as I find it makes me prone to not do TDD.
 
 ## HolidayShould.cs
 - I used inline data to reduce repetition and also the size of the code. This tests the ```PublicHolidayFallsOn()``` method and checks whether its outputing the correct string.
